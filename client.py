@@ -58,7 +58,8 @@ async def giveaway(ctx, *, content:str):
 	msg = await client.send_message(client.get_channel('561435469699612673'), embed=embed)
 	await client.add_reaction(msg, '🎉')
 	asyncio.sleep(10)
-	await client.remove_field(msg, 0)
+	embed.remove_field(0)
+	await client.edit_message(msg, embed=embed)
 		
 @client.command(pass_context=True)
 async def listeningpresence(ctx, *, content:str):
