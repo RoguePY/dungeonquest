@@ -67,16 +67,14 @@ async def giveaway(ctx, secondtime, *, content:str):
 		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value=funnyquote, inline=True)
 		await client.edit_message(msg, embed=embed)
 		x = int(x)-10
-	embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
-	await client.edit_message(msg, embed=embed)
 	embed.remove_field(0)
+	embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
 	embed=discord.Embed(title=content, description="React with 🎉 to enter!", color=0xff2020)
 	await client.edit_message(msg, embed)
-	await asyncio.sleep(10)
 	while x > 0:
+		x = int(x)-1
 		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
 		embed.remove_field(0)
-		x = int(x)-1
 		await asyncio.sleep(1)
 	reacts = []
 	msg = discord.utils.get(client.messages, id = msg.id)
@@ -85,7 +83,6 @@ async def giveaway(ctx, secondtime, *, content:str):
 
 	for i in reactors:
    		reacts.append(i.mention)
-	await client.send_message(msg.channel, reacts)
 	await client.send_message(msg.channel, "** The winner is " + random.choice(reacts) + ". Congratulations!**")
 		
 @client.command(pass_context=True)
