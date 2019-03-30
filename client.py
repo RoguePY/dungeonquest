@@ -63,6 +63,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 		embed.remove_field(0)
 		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Who's hyped!?", inline=True)
 		await client.edit_message(msg, embed=embed)
+		await asyncio.sleep(10)
 		x = int(secondtime)-10
 	owo = client.get_reaction_users(reactiontime, 1000, after=Member)
 	print(owo)
