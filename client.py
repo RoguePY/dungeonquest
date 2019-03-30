@@ -29,7 +29,7 @@ import json
 import time
 import asyncio
 
-client = commands.Bot(command_prefix = "ruby.")
+client = commands.Bot(command_prefix = ".")
 client.remove_command('help')
 
 @client.event
