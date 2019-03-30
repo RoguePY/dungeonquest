@@ -76,6 +76,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 		x = int(x)-1
 		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
 		embed.remove_field(0)
+		await client.edit_message(msg, embed)
 		await asyncio.sleep(1)
 		print(x)
 	reacts = []
