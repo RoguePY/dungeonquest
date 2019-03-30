@@ -61,7 +61,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 	reactiontime = await client.add_reaction(msg, '🎉')
 	await asyncio.sleep(10)
 	x = int(secondtime)-10
-	while x > 10:
+	while x >= 10:
 		await asyncio.sleep(10)
 		embed.remove_field(0)
 		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value=funnyquote, inline=True)
@@ -72,7 +72,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 	embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
 	embed=discord.Embed(title=content, description="React with 🎉 to enter!", color=0xff2020)
 	await client.edit_message(msg, embed)
-	while x > 0:
+	while x >= 0:
 		x = int(x)-1
 		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
 		embed.remove_field(0)
