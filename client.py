@@ -52,7 +52,7 @@ async def speak(ctx, channel, *, content:str):
 
 @client.command(pass_context=True)
 async def giveaway(ctx, secondtime, *, content:str):
-	quotes = ["Searching through my pocketbook", "Fighting Myself", "Laughing at people laughing at me", "What?", "GLHF!", "May the odds be ever in your favor", "MEME REVIEW!", "inner Winner Chicken Dinner!", "Too Fast?", "Too Fast for you?"]
+	quotes = ["Searching through my pocketbook", "Fighting Myself", "Laughing at people laughing at me", "What?", "GLHF!", "May the odds be ever in your favor", "MEME REVIEW!", "Winner Winner Chicken Dinner!", "Too Fast?", "Too Fast for you?"]
 	funnyquote = random.choice(quotes)
 	embed=discord.Embed(title=content, description="React with 🎉 to enter!", color=0xbdf4fb)
 	embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(secondtime))), value=funnyquote, inline=True)
@@ -61,7 +61,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 	reactiontime = await client.add_reaction(msg, '🎉')
 	await asyncio.sleep(10)
 	x = int(secondtime)-10
-	while x >= 10:
+	while x > 10:
 		await asyncio.sleep(10)
 		embed.remove_field(0)
 		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value=funnyquote, inline=True)
