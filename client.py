@@ -61,7 +61,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 	reactiontime = await client.add_reaction(msg, '🎉')
 	await asyncio.sleep(10)
 	x = int(secondtime)-10
-	while x >= 10:
+	while x > 10:
 		x = int(x)-10
 		await asyncio.sleep(10)
 		embed.remove_field(0)
