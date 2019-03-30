@@ -62,7 +62,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 	reacts = []
 	msg = discord.utils.get(client.messages, id = msg.id)
 	for reactor in msg.reactions:
-   	reactors = await client.get_reaction_users(reactor)
+   		reactors = await client.get_reaction_users(reactor)
 
 	for i in reactors:
    		reacts.append(i.name)	
