@@ -73,11 +73,11 @@ async def giveaway(ctx, secondtime, *, content:str):
 	embed=discord.Embed(title=content, description="React with 🎉 to enter!", color=0xff2020)
 	await client.edit_message(msg, embed)
 	while x >= 0:
-		x = int(x)-1
+			embed.remove_field(0)
 		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
-		embed.remove_field(0)
-		await client.edit_message(msg, embed)
+		await client.edit_message(msg, embed=embed)
 		await asyncio.sleep(1)
+		x = int(x)-1
 		print(x)
 	reacts = []
 	msg = discord.utils.get(client.messages, id = msg.id)
