@@ -55,7 +55,10 @@ async def giveaway(ctx, *, content:str):
 	embed=discord.Embed(title="TITLE", description="React with 🎉 to enter!", color=0xbdf4fb)
 	embed.add_field(name='Time Remaining: 10 hours', value="Who's hyped!?", inline=True)
 	embed.set_footer(text="Ends at • Today at 3:04 PM")
-	await client.send_message(client.get_channel('561435469699612673'), embed=embed)
+	msg = await client.send_message(client.get_channel('561435469699612673'), embed=embed)
+	await client.add_reaction(msg, '🎉')
+	asyncio.sleep(10)
+	await client.remove_field(msg, 0)
 		
 @client.command(pass_context=True)
 async def listeningpresence(ctx, *, content:str):
