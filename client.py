@@ -36,8 +36,8 @@ client.remove_command('help')
 async def on_ready():
 	await client.change_presence(game=discord.Game(name="some DQ!"))
 	print("Hi.")
-	await client.send_message(client.get_channel('526619228803956736'), "**---------------------------------**")
-	await client.send_message(client.get_channel('526619228803956736'), "**                  Loaded.             **")
+	await client.send_message(client.get_channel('561498821302157313'), "**---------------------------------**")
+	await client.send_message(client.get_channel('561498821302157313'), "**                  Loaded.             **")
 	
 @client.event
 async def on_member_join(member):
