@@ -52,19 +52,32 @@ async def speak(ctx, channel, *, content:str):
 
 @client.command(pass_context=True)
 async def giveaway(ctx, secondtime, *, content:str):
+	quotes = [Searching through my pocketbook, Fighting Myself, Laughing at people laughing at me, What?, GLHF!, May the odds be ever in your favor, MEME REVIEW!, Winner Winner Chicken Dinner?, Too Fast?]
+	funnyquote = random.choice(quotes)
 	embed=discord.Embed(title=content, description="React with 🎉 to enter!", color=0xbdf4fb)
-	embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(secondtime))), value="Who's hyped!?", inline=True)
+	embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(secondtime))), value=funnyquote, inline=True)
 	embed.set_footer(text="Made by Rogue#0002")
 	msg = await client.send_message(client.get_channel('561435469699612673'), embed=embed)
 	reactiontime = await client.add_reaction(msg, '🎉')
 	await asyncio.sleep(10)
 	x = int(secondtime)-10
-	while x >= 0:
-		embed.remove_field(0)
-		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Who's hyped!?", inline=True)
-		await client.edit_message(msg, embed=embed)
+	while x >= 10:
 		await asyncio.sleep(10)
+		embed.remove_field(0)
+		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value=funnyquote, inline=True)
+		await client.edit_message(msg, embed=embed)
 		x = int(x)-10
+	embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
+	await client.edit_message(msg, embed=embed)
+	embed.remove_field(0)
+	embed=discord.Embed(title=content, description="React with 🎉 to enter!", color=0xff2020)
+	await client.edit_message(msg, embed)
+	await asyncio.sleep(10)
+	while x > 0
+		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
+		await client.edit_message(msg, embed=embed)
+		x = int(x)-10
+		await asyncio.sleep(1)
 	reacts = []
 	msg = discord.utils.get(client.messages, id = msg.id)
 	for reactor in msg.reactions:
