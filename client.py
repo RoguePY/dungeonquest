@@ -65,8 +65,13 @@ async def giveaway(ctx, secondtime, *, content:str):
 		await client.edit_message(msg, embed=embed)
 		await asyncio.sleep(10)
 		x = int(secondtime)-10
-	owo = client.get_reaction_users(reactiontime, 1000, after=Member)
-	print(owo)
+	reacts = []
+	msg = discord.utils.get(client.messages, id = msg.id)
+	for reactor in msg.reactions:
+   	reactors = await client.get_reaction_users(reactor)
+
+	for i in reactors:
+   		reacts.append(i.name)	
 		
 @client.command(pass_context=True)
 async def listeningpresence(ctx, *, content:str):
