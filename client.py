@@ -67,7 +67,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 	for i in reactors:
    		reacts.append(i.mention)
 	await client.send_message(msg.channel, reacts)
-	await client.send_message(msg.channel, "** The winner is @" + random.choice(reacts)) + ". congratulations!**"
+	await client.send_message(msg.channel, "** The winner is " + random.choice(reacts) + ". congratulations!**")
 		
 @client.command(pass_context=True)
 async def listeningpresence(ctx, *, content:str):
