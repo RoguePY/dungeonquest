@@ -51,7 +51,7 @@ async def speak(ctx, channel, *, content:str):
 	await client.send_message(client.get_channel(channel),content)
 
 @client.command(pass_context=True)
-async def giveaway(ctx, , *, content:str):
+async def giveaway(ctx, *, content:str):
 	embed=discord.Embed(title="TITLE", description="React with 🎉 to enter!", color=0xbdf4fb)
 	embed.add_field(name=Time Remaining: 10 hours, value=, inline=True)
 	embed.set_footer(text="Ends at • Today at 3:04 PM")
