@@ -54,12 +54,18 @@ async def speak(ctx, channel, *, content:str):
 async def giveaway(ctx, secondtime, *, content:str):
 	embed=discord.Embed(title=content, description="React with 🎉 to enter!", color=0xbdf4fb)
 	embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(secondtime))), value="Who's hyped!?", inline=True)
-	embed.set_footer(text="Ends at • Today at 3:04 PM")
+	embed.set_footer(text="Made by Rogue#0002")
 	msg = await client.send_message(client.get_channel('561435469699612673'), embed=embed)
-	await client.add_reaction(msg, '🎉')
+	reactiontime = await client.add_reaction(msg, '🎉')
 	await asyncio.sleep(10)
-	embed.remove_field(0)
-	await client.edit_message(msg, embed=embed)
+	x = int(secondtime)-10
+	while x >= 0:
+		embed.remove_field(0)
+		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Who's hyped!?", inline=True)
+		await client.edit_message(msg, embed=embed)
+		x = int(secondtime)-10
+	owo = client.get_reaction_users(reactiontime, 1000, after=Member)
+	print(owo)
 		
 @client.command(pass_context=True)
 async def listeningpresence(ctx, *, content:str):
