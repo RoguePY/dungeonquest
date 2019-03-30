@@ -62,11 +62,11 @@ async def giveaway(ctx, secondtime, *, content:str):
 	await asyncio.sleep(10)
 	x = int(secondtime)-10
 	while x >= 10:
+		x = int(x)-10
 		await asyncio.sleep(10)
 		embed.remove_field(0)
 		embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value=funnyquote, inline=True)
 		await client.edit_message(msg, embed=embed)
-		x = int(x)-10
 		print(x)
 	embed.remove_field(0)
 	embed.add_field(name='Time Remaining: ' + str(datetime.timedelta(seconds=int(x))), value="Last Chance to Enter!", inline=True)
