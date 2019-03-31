@@ -38,14 +38,7 @@ async def on_ready():
 	print("Hi.")
 	await client.send_message(client.get_channel('561498821302157313'), "**---------------------------------**")
 	await client.send_message(client.get_channel('561498821302157313'), "**                  Loaded.             **")
-	
-@client.event
-async def on_member_join(member):
-	roles = discord.utils.get(member.server.roles, name="Not Verified")
-	await client.add_roles(member, roles)
-	await client.send_message(member, "Welcome to Ruby Realms! Make sure to read the rules! The website link is https://www.rubyrealms.com if you didn't know!")
-	await client.send_message(client.get_channel('526619228803956736'), member.name + " joined. ID: " + member.id)
-	
+		
 @client.command(pass_context=True)
 async def speak(ctx, channel, *, content:str):
 	await client.send_message(client.get_channel(channel),content)
