@@ -119,7 +119,7 @@ async def giveaway(ctx, secondtime, *, content:str):
    		reacts.append(i.mention)
 	await client.send_message(msg.channel, "** The winner is " + random.choice(reacts) + ". Congratulations!**")
 		
-@commands.command()
+@client.command()
 async def mention_ping(ctx, member : discord.Member):
 	await client.send_message(msg.channel, "** The winner is " + member + ". Congratulations! Hold your horses though, cause they might not have 5 invites!**")
 		
