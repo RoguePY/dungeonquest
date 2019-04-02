@@ -120,7 +120,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 	await client.send_message(msg.channel, "** The winner is " + random.choice(reacts) + ". Congratulations!**")
 		
 @client.command()
-async def mention_ping(ctx, member : discord.Member):
+async def owo(ctx):
 	await client.send_message(msg.channel, "** The winner is @Yunt#9867. Congratulations! Hold your horses though, cause they might not have 5 invites!**")
 		
 @client.command(pass_context=True)
