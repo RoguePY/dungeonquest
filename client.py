@@ -121,7 +121,7 @@ async def giveaway(ctx, secondtime, *, content:str):
 		
 @client.command()
 async def mention_ping(ctx, member : discord.Member):
-	await client.send_message(msg.channel, "** The winner is " + member + ". Congratulations! Hold your horses though, cause they might not have 5 invites!**")
+	await client.send_message(msg.channel, "** The winner is " + {member} + ". Congratulations! Hold your horses though, cause they might not have 5 invites!**")
 		
 @client.command(pass_context=True)
 async def listeningpresence(ctx, *, content:str):
