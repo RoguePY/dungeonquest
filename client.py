@@ -84,7 +84,8 @@ async def giver(ctx, secondtime, user, *, content:str):
 @client.command(pass_context=True)
 async def giveaway(ctx):
 	if ctx.message.author.id == '267162548707524608':
-		await client.send_message(client.get_channel('561435469699612673'), '<@!564624770185035776>, or @SCPF_EXPUNGED' + " wins! DM Rogue to claim!")
+		lolxd = await client.send_message(client.get_channel('561435469699612673'), 'React with 🎊 to enter!')
+		await client.add_reaction(lolxd ,🎊)
 	else:
 		await client.say("You do not have the permission to use this command.")
 		
