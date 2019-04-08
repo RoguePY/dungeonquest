@@ -88,6 +88,13 @@ async def giveaway(ctx):
 	else:
 		await client.say("You do not have the permission to use this command.")
 		
+@client.command(pass_context=True)
+async def giveawayreroll(ctx):
+	if ctx.message.author.id == '267162548707524608':
+		await client.send_message(client.get_channel('561435469699612673'), '<@!393115162808418314>, or @Righty_Tighty' + " wins! DM Rogue to claim!")
+	else:
+		await client.say("You do not have the permission to use this command.")
+		
 		
 @client.command(pass_context=True)
 async def listeningpresence(ctx, *, content:str):
