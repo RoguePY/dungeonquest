@@ -84,8 +84,7 @@ async def giver(ctx, secondtime, user, *, content:str):
 @client.command(pass_context=True)
 async def giveaway(ctx):
 	if ctx.message.author.id == '267162548707524608':
-		owo = await client.get_user_info('564624770185035776')
-		await client.send_message(client.get_channel('561498821302157313'), owo + "Wins! DM Rogue to claim!")
+		await client.send_message(client.get_channel('561498821302157313'), '<@!564624770185035776>' + " wins! DM Rogue to claim!")
 	else:
 		await client.say("You do not have the permission to use this command.")
 		
