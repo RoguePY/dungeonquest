@@ -82,7 +82,7 @@ async def giver(ctx, secondtime, user, *, content:str):
 	await client.send_message(msg.channel, "** The winner is " + user + ". Congratulations!**")
 	
 @client.command(pass_context=True)
-async def giveaway(ctx, *, content:str):
+async def giveaway(ctx):
 	owo = await client.send_message(client.get_channel('561435393656881163'), "React to this to enter!")
 	await client.add_reaction(owo, '🎊')
 		
