@@ -83,7 +83,7 @@ async def giver(ctx, secondtime, user, *, content:str):
 	
 @client.command(pass_context=True)
 async def giveaway(ctx, *, content:str):
-	owo = await client.send_message(client.get_channel('561435393656881163', "React to this to enter!")
+	owo = await client.send_message(client.get_channel('561435393656881163'), "React to this to enter!")
 	await client.add_reaction(owo, '🎊')
 		
 		
