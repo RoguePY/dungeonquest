@@ -31,7 +31,7 @@ import asyncio
 
 client = commands.Bot(command_prefix = ".")
 client.remove_command('help')
-
+#Ho
 @client.event
 async def on_ready():
 	await client.change_presence(game=discord.Game(name="some DQ!"))
