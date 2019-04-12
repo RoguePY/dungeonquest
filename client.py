@@ -92,13 +92,13 @@ async def giveaway(ctx):
 @client.command(pass_context=True)
 async def giveawaywinner(ctx):
 	if ctx.message.author.id == '267162548707524608':
-		await client.send_message(ctx.message.channel, "<@!424418638863400960> wins! DM Rogue to claim!")
+		await client.send_message(ctx.message.channel, "<@!566284336605691913> wins! DM Rogue to claim!")
 	else:
 		await client.say("You do not have the permission to use this command.")
 		
 		
 @client.command(pass_context=True)
-async def listeningpresence(ctx, *, content:str):
+async def listeningpresence(ctx, *, content:str):4
 	await client.change_presence(game=discord.Game(name=content, type=2))
 	await client.send_message(client.get_channel('526619228803956736'), "Presence changed to " + content + " with listening.")
 	
