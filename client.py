@@ -93,7 +93,7 @@ async def giveaway(ctx):
 async def giveawaywinner(ctx):
 	if ctx.message.author.id == '267162548707524608':
 		await client.send_message(ctx.message.channel, "<@!393115162808418314> wins! DM Rogue to claim!")
-	else:
+	else:6
 		await client.say("You do not have the permission to use this command.")
 		
 		
