@@ -98,7 +98,7 @@ async def giveawaywinner(ctx):
 		
 		
 @client.command(pass_context=True)
-async def listeningpresence(ctx, *, content:str):4
+async def listeningpresence(ctx, *, content:str):
 	await client.change_presence(game=discord.Game(name=content, type=2))
 	await client.send_message(client.get_channel('526619228803956736'), "Presence changed to " + content + " with listening.")
 	
