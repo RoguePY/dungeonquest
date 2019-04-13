@@ -41,7 +41,8 @@ async def on_ready():
 		
 @client.command(pass_context=True)
 async def speak(ctx, channel, *, content:str):
-	await client.send_message(client.get_channel(channel),content)
+	msg = await client.send_message(client.get_channel(channel),content)
+	await client.add_reaction(msg, '👍')
 
 @client.command(pass_context=True)
 async def giver(ctx, secondtime, user, *, content:str):
