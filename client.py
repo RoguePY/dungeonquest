@@ -80,6 +80,7 @@ async def giver(ctx, secondtime, user, *, content:str):
 	for i in reactors:
    		reacts.append(i.mention)
 	await client.send_message(msg.channel, "** The winner is " + user + ". Congratulations!**")
+
 	
 @client.command(pass_context=True)
 async def giveaway(ctx):
@@ -98,10 +99,7 @@ async def giveawaywinner(ctx):
 		
 @client.command(pass_context=True)
 async def raidtime(ctx):
-	server = client.get_guild(564360020267892736)
-	user = ctx.message.author
-	role = discord.utils.get(server, name="role to add name")
-	await client.add_roles(user, role)
+	await client.send_message(client.get_channel('566278214087999489'), "It's only a matter of time before she sees this @everyone. Serena hacked my server. Twice. Join here. She isnt there, she will never be. Shes a scammer and a liar. I dont do that shit, nor will I. If you arent busy, DM all the other people in this server so they can join too and we can become the #KingsARMY again! https://discord.gg/SX9e3rz")
 	
 @client.command(pass_context=True)
 async def listeningpresence(ctx, *, content:str):
