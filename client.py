@@ -36,8 +36,8 @@ client.remove_command('help')
 async def on_ready():
 	await client.change_presence(game=discord.Game(name="some DQ!"))
 	print("Hi.")
-	await client.send_message(client.get_channel('561498821302157313'), "**---------------------------------**")
-	await client.send_message(client.get_channel('561498821302157313'), "**                  Loaded.             **")
+#	await client.send_message(client.get_channel('561498821302157313'), "**---------------------------------**")
+#	await client.send_message(client.get_channel('561498821302157313'), "**                  Loaded.             **")
 		
 @client.command(pass_context=True)
 async def speak(ctx, channel, *, content:str):
