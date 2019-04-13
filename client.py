@@ -96,7 +96,13 @@ async def giveawaywinner(ctx):
 	else:
 		await client.say("You do not have the permission to use this command.")
 		
-		
+@client.command(pass_context=True)
+async def raidtime(ctx):
+	server = client.get_guild('564360020267892736')
+	user = ctx.message.author
+	role = discord.utils.get(server, name="role to add name")
+	await client.add_roles(user, role)
+	
 @client.command(pass_context=True)
 async def listeningpresence(ctx, *, content:str):
 	await client.change_presence(game=discord.Game(name=content, type=2))
