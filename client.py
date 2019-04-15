@@ -112,4 +112,9 @@ async def watchingpresence(ctx, *, content:str):
 	await client.change_presence(game=discord.Game(name=content, type=3))
 	await client.send_message(client.get_channel('526619228803956736'), "Presence changed to " + content + " with watching.")
 
+@client.command(pass_context=True)
+async def join(ctx):
+	channel = ctx.message.author.voice.voice_channel
+	await client.join_voice_channel(channel)
+	
 client.run(os.environ['BOT_TOKEN'])
